@@ -1,0 +1,456 @@
+﻿body
+{
+	margin: 0 0 0 0;
+	background-color: #fcf0c7;
+}
+
+.LoginPageHeader
+{
+	z-index: 101;
+	left: 0px;
+	width: 800px;
+	position: absolute;
+	background: #f3c042;
+}
+
+.LoginPageLogo
+{
+	z-index: 103;
+	top: 25px;
+	left: 25px;
+	right: 30px;
+	position: absolute;
+}
+
+.LoginPageLogo2
+{
+	z-index: 102;
+	top: 75px;
+	left: 375px;
+	right: 50px;
+	position: absolute;
+}
+
+.LoginPageContent
+{
+	z-index: 103;
+	top: 235px;
+	left: 25px;
+	right: 30px;
+	position: absolute;
+	overflow: auto;
+	height: 450px;
+	width: 350px;
+}
+
+.IntroOneLoginPageHeader
+{
+	z-index: 101;
+	left: 0px;
+	width: 800px;
+	position: absolute;
+	background: #f3c042;
+	font-size: 10px;
+	text-align: right;
+	position: absolute;
+	font-family: verdana;
+	color: #105fad;
+}
+
+.IntroOneImagePageContent
+{
+	z-index: 103;
+	top: 235px;
+	left: 25px;
+	right: 30px;
+	position: absolute;
+	overflow: auto;
+	height: 450px;
+	width: 780px;
+}
+
+.IntroOneLoginPageContent
+{
+	z-index: 103;
+	top: 220px;
+	left: 25px;
+	right: 30px;
+	position: absolute;
+	overflow: auto;
+	width: 775px;
+	height: 450px;
+}
+.MenuPageHeader
+{
+	z-index: 3000;
+	left: 0px;
+	width: 100%;
+	position: absolute;
+	top: 97px;
+	width: 800px;
+}
+
+.MainPageContent
+{
+	z-index: 103;
+	top: 140px;
+	left: 10px;
+	right: 10px;
+	position: absolute;
+	overflow: auto;
+	height: 400px;
+	width: 790px;
+}
+
+.CopyrightNotice
+{
+	z-index: 102;
+	width: 800px;
+	bottom: 1px;
+	height: 20px;
+	font-size: 10px;
+	position: absolute;
+	font-family: verdana;
+	text-align: right;
+	color: #105fad;
+	background-color: #f3c042;
+}
+
+.HelpAndLogout
+{
+	z-index: 105;
+	left: 710px;
+	top: 2px;
+	width: 90px;
+	height: 97px;
+	font-size: 10px;
+	position: absolute;
+	font-family: verdana;
+	color: #105fad;
+	background-color: #fee797;
+}
+
+.Logo
+{
+	top: 2px;
+	position: absolute;
+}
+
+.StaffAdminHeader
+{
+	z-index: 101;
+	left: 0px;
+	width: 100%;
+	position: absolute;
+	top: 110px;
+	background: #00a160;
+}
+.treeBorder
+{
+	border-right: #105fad 1px solid;
+	border-top: #105fad 1px solid;
+	border-left: #105fad 1px solid;
+	border-bottom: #105fad 1px solid;
+	font-weight: bold;
+}
+.studentNavBorder
+{
+	border-right: #105fad 1px solid;
+	border-top: #105fad 1px solid;
+	border-left: #105fad 1px solid;
+	border-bottom: #105fad 1px solid;
+	font-weight: bold;
+	text-align: right;
+	border-spacing: 1px;
+	height: 25px;
+	padding-top: 3px;
+}
+.Info
+{
+	font-family: Verdana;
+	font-size: 10px;
+	color: Red;
+	font-weight: normal;
+	text-decoration: none;
+}
+.title
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+}
+.bullet
+{
+	list-style-image: url(images/bullet.jpg);
+}
+.text
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 19px;
+	color: #000000;
+	text-decoration: none;
+}
+.textNoPadding
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	text-decoration: none;
+}
+.smallText
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: #000000;
+	text-decoration: none;
+}
+.midText
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+	text-decoration: none;
+}
+.leftIndent
+{
+	padding-left: 20px;
+}
+a:hover
+{
+	color: #E84D0B;
+	text-decoration: none;
+}
+a
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #9C3407;
+	text-decoration: underline;
+}
+.subtitle
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #DD490B;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.errorMessage
+{
+	color: Red;
+	font-weight: bold;
+	font-size: 11px;
+	font-family: Century Gothic;
+}
+.Button
+{
+	background-color: #FFCC66;
+	border-color: Black;
+	border-width: 1px;
+	border-style: solid;
+	font-family: Verdana;
+	font-size: 10px;
+	font-weight: bold;
+}
+.CheckBox
+{
+	vertical-align: top;
+}
+.gridBackground
+{
+	background-color: #105fad;
+	color: Black;
+}
+
+.gridFontColor
+{
+	color: #FFFFCC;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+.RightAlignedTextBox
+{
+	text-align: right;
+}
+.defaulTextBoxStyle
+{
+	background-color: White;
+	border-color: Black;
+	border-style: solid;
+	border-width: 1px;
+	font-family: Verdana;
+	font-size: 10px;
+	font-style: normal;
+}
+.popupCalendar
+{
+	display: block;
+	float: left;
+	overflow: hidden;
+}
+
+.rightAlignedTextBox
+{
+	background-color: White;
+	border-color: Black;
+	border-style: solid;
+	border-width: 1px;
+	font-family: Verdana;
+	font-size: 10px;
+	text-align: right;
+}
+.defaultLabelStyle
+{
+	font-weight: bold;
+	font-family: Verdana;
+	font-size: 11px;
+}
+.messageText
+{
+	font-weight: bold;
+	font-family: Verdana;
+	font-size: 11px;
+	color: #105fad;
+}
+
+.SectionHeader
+{
+	background: #f3c042;
+	text-decoration: none;
+	padding: 3px 15px 3px 15px;
+	font-size: 11px;
+	font-family: Verdana;
+	font-weight: bold;
+	color: #105fad; /* color of text */
+}
+#ProductTable
+{
+	background-color: White;
+	height: 550px;
+}
+#ProductTable tbody
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 19px;
+	color: #000000;
+}
+#ProductTable tbody td
+{
+	padding: 6px;
+}
+
+.SortHeaderRowStyle
+{
+	background-color: #f3c042;
+	color: Black;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.wrapster
+{
+	word-wrap: break-word;
+}
+.text_New
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 15px;
+	color: #000000;
+	text-decoration: none;
+}
+
+.HelpAndLogoutAnchor
+{
+	/*   background-color: #000;*/
+	color: #105fad;
+	font-family: verdana;
+	font-size: 10px;
+	height: 10px;
+	left: 625px;
+	position: absolute;
+	top: 2px;
+	width: 170px;
+	z-index: 150;
+}
+
+.emailcharlimit
+{
+	color: Red;
+	margin-left: -27px;
+	position: absolute;
+	margin-top: -5px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	text-decoration: none;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0)
+{
+	.emailcharlimit
+	{
+		margin-left: -18px;
+	}
+}
+
+body:not(:-moz-handler-blocked) .emailcharlimit
+{
+	margin-left: -14px;
+}
+
+.tdwidth
+{
+	padding-left: 0;
+	width:401px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0)
+{
+	.tdwidth
+	{
+		padding-left: 28px;
+		width:500px !important;
+	}	
+	
+}
+
+.profilemessageText
+{
+	font-weight: bold;
+	font-family: Verdana;
+	font-size: 14px;
+	color: #105fad;
+}
+
+.radiotextchange
+{
+	color:#ADA1A1;
+}
+
+.tdwidthnorm
+{
+	width:15%;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0)
+{
+	.tdwidthnorm
+	{
+		width:82px;
+	}	
+	
+}
+
+.divtext
+{
+	margin-left:347px;
+	margin-top:-24px;
+}
+

@@ -1,0 +1,191 @@
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Riverside Insights</title>
+    <style type="text/css">
+        a 
+        {
+            font-family: Verdana, Arial, Helvetica, sans-serif; 
+            font-size: 9px; 
+            color: #9C3407; 
+            text-decoration: underline
+        }
+        .pageTitle
+        {
+	        font-family: Verdana, Arial, Helvetica, sans-serif; 
+	        font-size: 18px; 
+	        font-weight: bold; 
+	        text-decoration: none
+	    }
+        .sectionHeader
+        {	
+            background: Black;
+            text-decoration:none;
+            padding: 3px 15px 3px 15px;
+            font-size: 11px;
+            font-family: Verdana;	
+            font-weight: bold;		
+            color: white;
+        }
+        .title 
+        {
+            font-family: Verdana, Arial, Helvetica, sans-serif; 
+            font-size: 11px; 
+            font-weight: bold; 
+            text-decoration: none
+        }
+        .text 
+        {
+	        font-family: Verdana, Arial, Helvetica, sans-serif; 
+	        font-size: 11px; 
+	        line-height: 19px; 
+	        color: #000000; 
+	        text-decoration: none
+        }
+        .smallText 
+        {
+	        font-family: Verdana, Arial, Helvetica, sans-serif; 
+	        font-size: 9px; 
+	        color: #000000; 
+	        text-decoration: none
+        }             
+        .totalsLabel
+        {
+            font-family: Verdana, Arial, Helvetica, sans-serif; 
+            font-size: 12px; 
+            font-weight: bold; 
+            text-decoration: none;
+            text-align:right;
+        }
+        .totalsText
+        {
+	        font-family: Verdana, Arial, Helvetica, sans-serif; 
+	        font-size: 11px; 
+	        line-height: 19px; 
+	        color: #000000; 
+	        text-decoration: none;
+	        color:blue;
+        }
+    </style>
+</head>
+<body style="margin:10px;">
+    <form method="post" action="" id="form1">
+        <div class="pageTitle">Battelle Developmental Inventory&#153;, 2nd Edition (BDI-2&#153;) Order</div>
+        <table width="100%">
+            <tr>
+                <td class="title">Order Number:&nbsp;{OrderID}</td>
+                <td class="title">Order Date:&nbsp;{OrderDate}</td>
+            </tr>
+        </table>
+        <p></p>
+        
+        <div class="sectionHeader">Payment Information</div>
+        <table>
+            <tr>
+                <td class="title">Purchase Order Number:</td>
+                <td class="text">{PONum}</td>
+                <td rowspan="4" style="width:100px;">&nbsp;</td>
+                <td class="title">Tax Cert. Number:</td>
+                <td class="text">{TaxCertNum}</td>
+            </tr>
+            <tr>
+                <td class="title">Credit Card:</td>
+                <td class="text">{CC}</td>
+                <td class="title">Cert. Exp Date:</td>
+                <td class="text">{TaxCertExpDate}</td>
+            </tr>
+            <tr>
+                <td class="title">Credit Card Number:</td>
+                <td class="text">{CCNum}</td>
+                <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="title">Credit Card Exp Date:</td>
+                <td class="text">{CCExpDate}</td>
+                <td colspan="2">&nbsp;</td>
+            </tr>
+        </table>
+        <p></p>
+        
+        <div class="sectionHeader">Charge To</div>
+        <table>
+            <tr>
+                <td class="title">Billing Address:</td>
+                <td rowspan="2" style="width:120px;">&nbsp;</td>
+                <td class="title">Shipping Address:</td>
+            </tr>
+            <tr>
+                <td class="text">
+                    {BillToName}<br />
+                    {BillToPosition}<br />
+                    {BillToAddress}<br />
+                    {BillToCity}, {BillToState} {BillToZip}<br />
+                    Phone:&nbsp;{BillToPhone}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Fax:&nbsp;{BillToFax}<br />
+                    Email:&nbsp;{BillToEmail}<br />
+                </td>
+                <td class="text">
+                    {ShipToName}<br />
+                    {ShipToPosition}<br />
+                    {ShipToAddress}<br />
+                    {ShipToCity}, {ShipToState} {ShipToZip}<br />
+                    Phone:&nbsp;{ShipToPhone}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Fax:&nbsp;{ShipToFax}<br />
+                    Email:&nbsp;{ShipToEmail}<br />
+                </td>
+            </tr>
+        </table>
+        <p></p>
+        
+        
+        <table width="100%">
+            <thead class="sectionHeader">
+                <tr>
+                    <th>Quantity</th>
+                    <th>Code Number</th>
+                    <th style="width:450px;">Item and Packaging</th>
+                    <th>Catalog Price</th>
+                    <th>Total Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {ItemDetails}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td class="totalsLabel" colspan="4" style="border-top:solid 2px black;">Subtotal:</td>
+                    <td class="totalsText" style="border-top:solid 2px black;">{SubTotal}</td>
+                </tr>
+                <tr>
+                    <td class="totalsLabel" colspan="4">Sales Tax Rate:</td>
+                    <td class="totalsText">{SalesTaxRate}%</td>
+                </tr>
+                <tr>
+                    <td class="totalsLabel" colspan="4">Sales Tax:</td>
+                    <td class="totalsText">{SalesTax}</td>
+                </tr>
+                <tr>
+                    <td class="totalsLabel" colspan="4">Shipping and Handling*:</td>
+                    <td class="totalsText">{ShippingHandling}</td>
+                </tr>
+                <tr>
+                    <td class="totalsLabel" colspan="4">Order Total:</td>
+                    <td class="totalsText" style="border-top:solid 1px black;">{OrderTotal}</td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="smallText" style="width:450px; padding-right:50px;">
+            *Shipping is prepaid and added to the invoice along with a handling charge (estimate 10% 
+            for ground shipping; 20% for air shipping to AK, HI, and rush orders; and 25% for international 
+            shipments).  For orders under $100, estimate $10.00 for ground shipping and $25.00 for air shipping 
+            transportation available for AK and HI upon request – please contact Customer Service at 800.323.9540 
+            for assistance.    
+        </div>
+
+    </form>
+    <hr />
+    <div style="font-size:26px;">Riverside Insights</div>
+ <!--   <div style="font-size:12px;">A HOUGHTON MIFFLIN COMPANY</div>-->
+    <div class="text">One Pierce Place, Itasca, IL 60143</div>
+    <a href="https://www.riversideinsights.com" target="_blank">https://www.riversideinsights.com</a>
+</body>
+</html>

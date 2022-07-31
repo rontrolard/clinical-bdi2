@@ -1,0 +1,1569 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="Current">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1A306D6D-E0E0-489E-B47B-1B64869D0253}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BDI2Web</RootNamespace>
+    <AssemblyName>BDI2Web</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <DeployOnBuild>true</DeployOnBuild>
+    <DeployTarget>Package</DeployTarget>
+    <PackageAsSingleFile>true</PackageAsSingleFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug_Web|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'UAT|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferencedAssemblies\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferencedAssemblies\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferencedAssemblies\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging.Database, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferencedAssemblies\Microsoft.Practices.EnterpriseLibrary.Logging.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ObjectBuilder2, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferencedAssemblies\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferencedAssemblies\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Siberix.ReportWriter, Version=7.1.107.0, Culture=neutral, PublicKeyToken=fdadc79e9bd768c7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferencedAssemblies\Siberix.ReportWriter.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions.Design, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="Telerik.Web.Design, Version=2010.2.929.35, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferencedAssemblies\Telerik.Web.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI, Version=2010.2.929.35, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferencedAssemblies\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Validators, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferencedAssemblies\Validators.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Default\BDI2.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddNewPassword.aspx.cs">
+      <DependentUpon>AddNewPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddNewPassword.aspx.designer.cs">
+      <DependentUpon>AddNewPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assessment\AssessmentCommon.cs" />
+    <Compile Include="Assessment\ChildAssessment.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ChildAssessment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assessment\ChildAssessment.aspx.designer.cs">
+      <DependentUpon>ChildAssessment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assessment\DomainTotals.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>DomainTotals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assessment\DomainTotals.aspx.designer.cs">
+      <DependentUpon>DomainTotals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assessment\EditAssessment.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>EditAssessment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assessment\EditAssessment.aspx.designer.cs">
+      <DependentUpon>EditAssessment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assessment\EditScreener.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>EditScreener.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assessment\EditScreener.aspx.designer.cs">
+      <DependentUpon>EditScreener.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assessment\QuestionNote.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>QuestionNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assessment\QuestionNote.aspx.designer.cs">
+      <DependentUpon>QuestionNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assessment\TestCalendar.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>TestCalendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assessment\TestCalendar.aspx.designer.cs">
+      <DependentUpon>TestCalendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assessment\TestExaminer.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>TestExaminer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assessment\TestExaminer.aspx.designer.cs">
+      <DependentUpon>TestExaminer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assessment\TestObservations.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>TestObservations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assessment\TestObservations.aspx.designer.cs">
+      <DependentUpon>TestObservations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common_Code\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common_Code\CombineRBL.cs" />
+    <Compile Include="Common_Code\SecureBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common_Code\SessionData.cs" />
+    <Compile Include="Controls\StudentNavigation.ascx.cs">
+      <DependentUpon>StudentNavigation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\StudentNavigation.ascx.designer.cs">
+      <DependentUpon>StudentNavigation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerRegistration\CustomerRegistration.aspx.cs">
+      <DependentUpon>CustomerRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerRegistration\CustomerRegistration.aspx.designer.cs">
+      <DependentUpon>CustomerRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerRegistration\EULA.aspx.cs">
+      <DependentUpon>EULA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerRegistration\EULA.aspx.designer.cs">
+      <DependentUpon>EULA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Download\MDSEula.aspx.cs">
+      <DependentUpon>MDSEula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Download\MDSEula.aspx.designer.cs">
+      <DependentUpon>MDSEula.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Download\MobileDataSolution.aspx.cs">
+      <DependentUpon>MobileDataSolution.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Download\MobileDataSolution.aspx.designer.cs">
+      <DependentUpon>MobileDataSolution.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ERFs\ERFManagement.aspx.cs">
+      <DependentUpon>ERFManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ERFs\ERFManagement.aspx.designer.cs">
+      <DependentUpon>ERFManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ERFs\ERFManagementRootLevel.ascx.cs">
+      <DependentUpon>ERFManagementRootLevel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ERFs\ERFManagementRootLevel.ascx.designer.cs">
+      <DependentUpon>ERFManagementRootLevel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorLog\ErrorList.aspx.cs">
+      <DependentUpon>ErrorList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorLog\ErrorList.aspx.designer.cs">
+      <DependentUpon>ErrorList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExIm\AppliedFilters.aspx.cs">
+      <DependentUpon>AppliedFilters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExIm\AppliedFilters.aspx.designer.cs">
+      <DependentUpon>AppliedFilters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExIm\Export.aspx.cs">
+      <DependentUpon>Export.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExIm\Export.aspx.designer.cs">
+      <DependentUpon>Export.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExIm\Import.aspx.cs">
+      <DependentUpon>Import.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExIm\Import.aspx.designer.cs">
+      <DependentUpon>Import.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExIm\RunScheduleJob.aspx.cs">
+      <DependentUpon>RunScheduleJob.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExIm\RunScheduleJob.aspx.designer.cs">
+      <DependentUpon>RunScheduleJob.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExIm\ScheduledStatus.aspx.cs">
+      <DependentUpon>ScheduledStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExIm\ScheduledStatus.aspx.designer.cs">
+      <DependentUpon>ScheduledStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExIm\ScheduleUpload.aspx.cs">
+      <DependentUpon>ScheduleUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExIm\ScheduleUpload.aspx.designer.cs">
+      <DependentUpon>ScheduleUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Hierarchy\DeleteHierarchyLevel.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>DeleteHierarchyLevel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Hierarchy\DeleteHierarchyLevel.aspx.designer.cs">
+      <DependentUpon>DeleteHierarchyLevel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Hierarchy\InsertNewLevel.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>InsertNewLevel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Hierarchy\InsertNewLevel.aspx.designer.cs">
+      <DependentUpon>InsertNewLevel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Hierarchy\ManageHierarchy.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ManageHierarchy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Hierarchy\ManageHierarchy.aspx.designer.cs">
+      <DependentUpon>ManageHierarchy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Hierarchy\ManageMemberType.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ManageMemberType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Hierarchy\ManageMemberType.aspx.designer.cs">
+      <DependentUpon>ManageMemberType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Intro.Master.cs">
+      <DependentUpon>Intro.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Intro.Master.designer.cs">
+      <DependentUpon>Intro.Master</DependentUpon>
+    </Compile>
+    <Compile Include="IntroOneLogo.Master.cs">
+      <DependentUpon>IntroOneLogo.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IntroOneLogo.Master.designer.cs">
+      <DependentUpon>IntroOneLogo.Master</DependentUpon>
+    </Compile>
+    <Compile Include="IntroWithLogout.Master.cs">
+      <DependentUpon>IntroWithLogout.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IntroWithLogout.Master.designer.cs">
+      <DependentUpon>IntroWithLogout.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MDSLicenses\MDSLicenseManagement.aspx.cs">
+      <DependentUpon>MDSLicenseManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MDSLicenses\MDSLicenseManagement.aspx.designer.cs">
+      <DependentUpon>MDSLicenseManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MDSLicenses\MDSManagementRootLevel.ascx.cs">
+      <DependentUpon>MDSManagementRootLevel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MDSLicenses\MDSManagementRootLevel.ascx.designer.cs">
+      <DependentUpon>MDSManagementRootLevel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Notes\ChildNotes.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ChildNotes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notes\ChildNotes.aspx.designer.cs">
+      <DependentUpon>ChildNotes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notes\HSGeneralNote.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>HSGeneralNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notes\HSGeneralNote.aspx.designer.cs">
+      <DependentUpon>HSGeneralNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notes\HSMandatedNote.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>HSMandatedNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notes\HSMandatedNote.aspx.designer.cs">
+      <DependentUpon>HSMandatedNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notes\NoteCalendar.aspx.cs">
+      <DependentUpon>NoteCalendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notes\NoteCalendar.aspx.designer.cs">
+      <DependentUpon>NoteCalendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notes\NoteObserver.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>NoteObserver.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notes\NoteObserver.aspx.designer.cs">
+      <DependentUpon>NoteObserver.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Organization\AddOrganization.aspx.cs">
+      <DependentUpon>AddOrganization.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Organization\AddOrganization.aspx.designer.cs">
+      <DependentUpon>AddOrganization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Organization\DeleteOrganization.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>DeleteOrganization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Organization\DeleteOrganization.aspx.designer.cs">
+      <DependentUpon>DeleteOrganization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Organization\EditOrganization.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>EditOrganization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Organization\EditOrganization.aspx.designer.cs">
+      <DependentUpon>EditOrganization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Organization\ManageOrganizations.aspx.cs">
+      <DependentUpon>ManageOrganizations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Organization\ManageOrganizations.aspx.designer.cs">
+      <DependentUpon>ManageOrganizations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProfilePage.aspx.cs">
+      <DependentUpon>ProfilePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProfilePage.aspx.designer.cs">
+      <DependentUpon>ProfilePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportSelection\GroupReportSelection.aspx.cs">
+      <DependentUpon>GroupReportSelection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSelection\GroupReportSelection.aspx.designer.cs">
+      <DependentUpon>GroupReportSelection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSelection\ReportCriteria.aspx.cs">
+      <DependentUpon>ReportCriteria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSelection\ReportCriteria.aspx.designer.cs">
+      <DependentUpon>ReportCriteria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSelection\ViewStaffProfileReport.aspx.cs">
+      <DependentUpon>ViewStaffProfileReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSelection\ViewStaffProfileReport.aspx.designer.cs">
+      <DependentUpon>ViewStaffProfileReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResetNewPassword.aspx.cs">
+      <DependentUpon>ResetNewPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResetNewPassword.aspx.designer.cs">
+      <DependentUpon>ResetNewPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SendPassword.aspx.cs">
+      <DependentUpon>SendPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SendPassword.aspx.designer.cs">
+      <DependentUpon>SendPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setup\SelectHierarchyStructure.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>SelectHierarchyStructure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setup\SelectHierarchyStructure.aspx.designer.cs">
+      <DependentUpon>SelectHierarchyStructure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setup\SelectSetupType.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>SelectSetupType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setup\SelectSetupType.aspx.designer.cs">
+      <DependentUpon>SelectSetupType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StaffAdmin\AddNewStaff.aspx.cs">
+      <DependentUpon>AddNewStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StaffAdmin\AddNewStaff.aspx.designer.cs">
+      <DependentUpon>AddNewStaff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StaffAdmin\EditStaff.aspx.cs">
+      <DependentUpon>EditStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StaffAdmin\EditStaff.aspx.designer.cs">
+      <DependentUpon>EditStaff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StaffAdmin\MDSActivation.aspx.cs">
+      <DependentUpon>MDSActivation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StaffAdmin\MDSActivation.aspx.designer.cs">
+      <DependentUpon>MDSActivation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StaffAdmin\SearchStaff.aspx.cs">
+      <DependentUpon>SearchStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StaffAdmin\SearchStaff.aspx.designer.cs">
+      <DependentUpon>SearchStaff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\AddChild.aspx.cs">
+      <DependentUpon>AddChild.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\AddChild.aspx.designer.cs">
+      <DependentUpon>AddChild.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\DragDropTest.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>DragDropTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\DragDropTest.aspx.designer.cs">
+      <DependentUpon>DragDropTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\EditChild.aspx.cs">
+      <DependentUpon>EditChild.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\EditChild.aspx.designer.cs">
+      <DependentUpon>EditChild.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\MergeStudent.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>MergeStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\MergeStudent.aspx.designer.cs">
+      <DependentUpon>MergeStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\MergeStudentRoster.aspx.cs">
+      <DependentUpon>MergeStudentRoster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\MergeStudentRoster.aspx.designer.cs">
+      <DependentUpon>MergeStudentRoster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\RerosterClassrooms.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>RerosterClassrooms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\RerosterClassrooms.aspx.designer.cs">
+      <DependentUpon>RerosterClassrooms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\RosterCriteria.aspx.cs">
+      <DependentUpon>RosterCriteria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\RosterCriteria.aspx.designer.cs">
+      <DependentUpon>RosterCriteria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\RosterImportedData.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>RosterImportedData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\RosterImportedData.aspx.designer.cs">
+      <DependentUpon>RosterImportedData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\SearchChild.aspx.cs">
+      <DependentUpon>SearchChild.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\SearchChild.aspx.designer.cs">
+      <DependentUpon>SearchChild.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\ViewRoster.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ViewRoster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\ViewRoster.aspx.designer.cs">
+      <DependentUpon>ViewRoster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSelection\ChildReportSelection.aspx.cs">
+      <DependentUpon>ChildReportSelection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSelection\ChildReportSelection.aspx.designer.cs">
+      <DependentUpon>ChildReportSelection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserDefinedLabelManagement\UserDefinedLabelManagement.aspx.cs">
+      <DependentUpon>UserDefinedLabelManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserDefinedLabelManagement\UserDefinedLabelManagement.aspx.designer.cs">
+      <DependentUpon>UserDefinedLabelManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Welcome\HomePage.aspx.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Welcome\HomePage.aspx.designer.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Main.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="ErrorLog\ErrorList.aspx" />
+    <Content Include="Images\spacer.gif" />
+    <Content Include="Intro.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Default\Default.skin" />
+    <Content Include="Hierarchy\DeleteHierarchyLevel.aspx" />
+    <Content Include="Hierarchy\InsertNewLevel.aspx" />
+    <Content Include="Hierarchy\ManageHierarchy.aspx" />
+    <Content Include="Logout.aspx" />
+    <Content Include="Organization\AddOrganization.aspx" />
+    <Content Include="Organization\DeleteOrganization.aspx" />
+    <Content Include="Organization\EditOrganization.aspx" />
+    <Content Include="RadControls\Treeview\Skins\Default\BottomLine.gif" />
+    <Content Include="RadControls\Treeview\Skins\Default\BottomMinus.gif" />
+    <Content Include="RadControls\Treeview\Skins\Default\BottomPlus.gif" />
+    <Content Include="RadControls\Treeview\Skins\Default\contextMenu.gif" />
+    <Content Include="RadControls\Treeview\Skins\Default\MiddleCrossLine.gif" />
+    <Content Include="RadControls\Treeview\Skins\Default\MiddleLine.gif" />
+    <Content Include="RadControls\Treeview\Skins\Default\MiddleMinus.gif" />
+    <Content Include="RadControls\Treeview\Skins\Default\MiddlePlus.gif" />
+    <Content Include="RadControls\Treeview\Skins\Default\SingleMinus.gif" />
+    <Content Include="RadControls\Treeview\Skins\Default\SinglePlus.gif" />
+    <Content Include="RadControls\Treeview\Skins\Default\Style.css" />
+    <Content Include="RadControls\Treeview\Skins\Default\TopLine.gif" />
+    <Content Include="RadControls\Treeview\Skins\Default\TopMinus.gif" />
+    <Content Include="RadControls\Treeview\Skins\Default\TopPlus.gif" />
+    <Content Include="RadControls\Treeview\Skins\Default\WhiteSpace.gif" />
+    <Content Include="RadControls\Window\Skins\Default\CoreTemplates.xml" />
+    <Content Include="RadControls\Window\Skins\Default\CssImg\footerResize.gif" />
+    <Content Include="RadControls\Window\Skins\Default\CssImg\RadWMinimizedBg.gif" />
+    <Content Include="RadControls\Window\Skins\Default\CssImg\RadWStatus.gif" />
+    <Content Include="RadControls\Window\Skins\Default\CssImg\RadWWrapperBodyLeft.gif" />
+    <Content Include="RadControls\Window\Skins\Default\CssImg\RadWWrapperBodyRight.gif" />
+    <Content Include="RadControls\Window\Skins\Default\CssImg\RadWWrapperHeaderCenter.gif" />
+    <Content Include="RadControls\Window\Skins\Default\CssImg\TabMiddle.GIF" />
+    <Content Include="RadControls\Window\Skins\Default\CssImg\TabMiddleSelected.gif" />
+    <Content Include="RadControls\Window\Skins\Default\Img\alert.wav" />
+    <Content Include="RadControls\Window\Skins\Default\Img\AlertIcon.gif" />
+    <Content Include="RadControls\Window\Skins\Default\Img\Close.gif" />
+    <Content Include="RadControls\Window\Skins\Default\Img\ConfirmIcon.GIF" />
+    <Content Include="RadControls\Window\Skins\Default\Img\defaultIcon.gif" />
+    <Content Include="RadControls\Window\Skins\Default\Img\loading.gif" />
+    <Content Include="RadControls\Window\Skins\Default\Img\Maximize.gif" />
+    <Content Include="RadControls\Window\Skins\Default\Img\Minimize.gif" />
+    <Content Include="RadControls\Window\Skins\Default\Img\modalBtnBg.gif" />
+    <Content Include="RadControls\Window\Skins\Default\Img\ModalImageBg.gif" />
+    <Content Include="RadControls\Window\Skins\Default\Img\PinOff.gif" />
+    <Content Include="RadControls\Window\Skins\Default\Img\PinOn.gif" />
+    <Content Include="RadControls\Window\Skins\Default\Img\Reload.gif" />
+    <Content Include="RadControls\Window\Skins\Default\Img\Restore.gif" />
+    <Content Include="RadControls\Window\Skins\Default\Img\splash.gif" />
+    <Content Include="RadControls\Window\Skins\Default\Img\transp.gif" />
+    <Content Include="RadControls\Window\Skins\Default\Window.css" />
+    <Content Include="SendPassword.aspx" />
+    <Content Include="Setup\SelectHierarchyStructure.aspx" />
+    <Content Include="Setup\SelectSetupType.aspx" />
+    <Content Include="StaffAdmin\EditStaff.aspx" />
+    <Content Include="StaffAdmin\SearchStaff.aspx" />
+    <Content Include="Student\EditChild.aspx" />
+    <Content Include="Student\RerosterClassrooms.aspx" />
+    <Content Include="Student\ViewRoster.aspx" />
+    <Content Include="Welcome\HomePage.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assessment\ChildAssessment.aspx" />
+    <Content Include="Assessment\DomainTotals.aspx" />
+    <Content Include="Assessment\EditAssessment.aspx" />
+    <Content Include="Assessment\EditScreener.aspx" />
+    <Content Include="Assessment\QuestionNote.aspx" />
+    <Content Include="Assessment\TestCalendar.aspx" />
+    <Content Include="Assessment\TestExaminer.aspx" />
+    <Content Include="Assessment\TestObservations.aspx" />
+    <Content Include="Config\Web.config.txt" />
+    <Content Include="CustomerRegistration\CustomerRegistration.aspx" />
+    <Content Include="CustomerRegistration\EULA.aspx" />
+    <Content Include="Images\0score.gif" />
+    <Content Include="Images\1score.gif" />
+    <Content Include="Images\2score.gif" />
+    <Content Include="Images\banner_child.gif" />
+    <Content Include="Images\banner_hierarchy.gif" />
+    <Content Include="Images\banner_import.gif" />
+    <Content Include="Images\banner_reports.gif" />
+    <Content Include="Images\banner_staff.gif" />
+    <Content Include="Images\boy_withBalloon_edited.gif" />
+    <Content Include="Images\calendar.jpg" />
+    <Content Include="Images\currentquestion-transparent.gif" />
+    <Content Include="Images\currentquestion.gif" />
+    <Content Include="Images\imethod.gif" />
+    <Content Include="Images\Large_logo_edited1.gif" />
+    <Content Include="Images\little_guy2.gif" />
+    <Content Include="Images\login_circle.gif" />
+    <Content Include="Images\login_logo.gif" />
+    <Content Include="Images\omethod.gif" />
+    <Content Include="Images\smethod.gif" />
+    <Content Include="Images\transparent_50.gif" />
+    <Content Include="js\resizeOverflow.js" />
+    <Content Include="Organization\ManageOrganizations.aspx" />
+    <Content Include="RadControls\Menu\Skins\CssChild\img\bottom.gif" />
+    <Content Include="RadControls\Menu\Skins\CssChild\img\groupImage.gif" />
+    <Content Include="RadControls\Menu\Skins\CssChild\img\invertedGroupImage.gif" />
+    <Content Include="RadControls\Menu\Skins\CssChild\img\left.gif" />
+    <Content Include="RadControls\Menu\Skins\CssChild\img\menuItemArrow.gif" />
+    <Content Include="RadControls\Menu\Skins\CssChild\img\right.gif" />
+    <Content Include="RadControls\Menu\Skins\CssChild\img\top.gif" />
+    <Content Include="RadControls\Menu\Skins\CssChild\styles.css" />
+    <Content Include="RadControls\Menu\Skins\CssExim\img\bottom.gif" />
+    <Content Include="RadControls\Menu\Skins\CssExim\img\groupImage.gif" />
+    <Content Include="RadControls\Menu\Skins\CssExim\img\invertedGroupImage.gif" />
+    <Content Include="RadControls\Menu\Skins\CssExim\img\left.gif" />
+    <Content Include="RadControls\Menu\Skins\CssExim\img\menuItemArrow.gif" />
+    <Content Include="RadControls\Menu\Skins\CssExim\img\right.gif" />
+    <Content Include="RadControls\Menu\Skins\CssExim\img\top.gif" />
+    <Content Include="RadControls\Menu\Skins\CssExim\styles.css" />
+    <Content Include="RadControls\Menu\Skins\CssHierarchy\img\bottom.gif" />
+    <Content Include="RadControls\Menu\Skins\CssHierarchy\img\groupImage.gif" />
+    <Content Include="RadControls\Menu\Skins\CssHierarchy\img\invertedGroupImage.gif" />
+    <Content Include="RadControls\Menu\Skins\CssHierarchy\img\left.gif" />
+    <Content Include="RadControls\Menu\Skins\CssHierarchy\img\menuItemArrow.gif" />
+    <Content Include="RadControls\Menu\Skins\CssHierarchy\img\right.gif" />
+    <Content Include="RadControls\Menu\Skins\CssHierarchy\img\top.gif" />
+    <Content Include="RadControls\Menu\Skins\CssHierarchy\styles.css" />
+    <Content Include="RadControls\Menu\Skins\CssReport\img\bottom.gif" />
+    <Content Include="RadControls\Menu\Skins\CssReport\img\groupImage.gif" />
+    <Content Include="RadControls\Menu\Skins\CssReport\img\invertedGroupImage.gif" />
+    <Content Include="RadControls\Menu\Skins\CssReport\img\left.gif" />
+    <Content Include="RadControls\Menu\Skins\CssReport\img\menuItemArrow.gif" />
+    <Content Include="RadControls\Menu\Skins\CssReport\img\right.gif" />
+    <Content Include="RadControls\Menu\Skins\CssReport\img\top.gif" />
+    <Content Include="RadControls\Menu\Skins\CssReport\styles.css" />
+    <Content Include="RadControls\Menu\Skins\CssStaff\img\bottom.gif" />
+    <Content Include="RadControls\Menu\Skins\CssStaff\img\groupImage.gif" />
+    <Content Include="RadControls\Menu\Skins\CssStaff\img\invertedGroupImage.gif" />
+    <Content Include="RadControls\Menu\Skins\CssStaff\img\left.gif" />
+    <Content Include="RadControls\Menu\Skins\CssStaff\img\menuItemArrow.gif" />
+    <Content Include="RadControls\Menu\Skins\CssStaff\img\right.gif" />
+    <Content Include="RadControls\Menu\Skins\CssStaff\img\top.gif" />
+    <Content Include="RadControls\Menu\Skins\CssStaff\styles.css" />
+    <Content Include="RadControls\Menu\Skins\CssTopLevel\img\bottom.gif" />
+    <Content Include="RadControls\Menu\Skins\CssTopLevel\img\groupImage.gif" />
+    <Content Include="RadControls\Menu\Skins\CssTopLevel\img\invertedGroupImage.gif" />
+    <Content Include="RadControls\Menu\Skins\CssTopLevel\img\left.gif" />
+    <Content Include="RadControls\Menu\Skins\CssTopLevel\img\menuItemArrow.gif" />
+    <Content Include="RadControls\Menu\Skins\CssTopLevel\img\right.gif" />
+    <Content Include="RadControls\Menu\Skins\CssTopLevel\img\top.gif" />
+    <Content Include="RadControls\Menu\Skins\CssTopLevel\styles.css" />
+    <Content Include="ReportSelection\ReportCriteria.aspx" />
+    <Content Include="Student\SearchChild.aspx" />
+    <Content Include="ReportSelection\ChildReportSelection.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\HTMLTemplates\ProductOrder.html" />
+    <Content Include="Config\redirect.htm" />
+    <Content Include="Controls\StudentNavigation.ascx" />
+    <Content Include="Help\adding_assessments.htm" />
+    <Content Include="Help\adding_a_child_record.htm" />
+    <Content Include="Help\adding_a_new_complete_assessment.htm" />
+    <Content Include="Help\adding_a_new_screener.htm" />
+    <Content Include="Help\adding_a_staff_member_to_your_organization.htm" />
+    <Content Include="Help\adding_new_members_to_your_organization.htm" />
+    <Content Include="Help\adding_notes_to_a_child_record.htm" />
+    <Content Include="Help\adding_user_defined_labels.htm" />
+    <Content Include="Help\child_administration.htm" />
+    <Content Include="Help\cicon1.gif" />
+    <Content Include="Help\cicon2.gif" />
+    <Content Include="Help\cicon9.gif" />
+    <Content Include="Help\cicon_loadindex_ani.gif" />
+    <Content Include="Help\default.css" />
+    <Content Include="Help\defining_a_hierarchy.htm" />
+    <Content Include="Help\defining_a_hierarchy_and_managing_your_organization.htm" />
+    <Content Include="Help\deleting_a_level_in_your_hierarchy.htm" />
+    <Content Include="Help\deleting_a_member_of_your_organization.htm" />
+    <Content Include="Help\deleting_child_records.htm" />
+    <Content Include="Help\deleting_notes_from_a_child_record.htm" />
+    <Content Include="Help\deleting_staff_records.htm" />
+    <Content Include="Help\editing_child_records.htm" />
+    <Content Include="Help\editing_members_of_your_organization.htm" />
+    <Content Include="Help\editing_notes_in_a_child_record_.htm" />
+    <Content Include="Help\editing_staff_records.htm" />
+    <Content Include="Help\helpman_topicinit.js" />
+    <Content Include="Help\hierarchy_organization.htm" />
+    <Content Include="Help\highlight.js" />
+    <Content Include="Help\index.html" />
+    <Content Include="Help\inserting_a_level_in_your_hierarchy.htm" />
+    <Content Include="Help\managing_your_organization.htm" />
+    <Content Include="Help\moving_a_member_of_your_organization.htm" />
+    <Content Include="Help\moving_staff_records.htm" />
+    <Content Include="Help\organizing_and_managing_staff_records.htm" />
+    <Content Include="Help\producing_a_child_complete_report_comparative_language_report.htm" />
+    <Content Include="Help\producing_a_child_complete_report_comprehensive_report.htm" />
+    <Content Include="Help\producing_a_child_complete_report_head_start_report.htm" />
+    <Content Include="Help\producing_a_child_complete_report_longitudinal_report.htm" />
+    <Content Include="Help\producing_a_child_complete_report_report_to_family_in_spanish.htm" />
+    <Content Include="Help\producing_a_child_complete_report_score_summary.htm" />
+    <Content Include="Help\producing_a_child_complete_report_service_plan_template.htm" />
+    <Content Include="Help\producing_a_child_complete_report_test_record_report.htm" />
+    <Content Include="Help\producing_a_child_screener_report_comparative_language_report.htm" />
+    <Content Include="Help\producing_a_child_screener_report_report_to_family_in_english.htm" />
+    <Content Include="Help\producing_a_child_screener_report_report_to_family_in_spanish.htm" />
+    <Content Include="Help\producing_a_group_complete_report_head_start_report.htm" />
+    <Content Include="Help\producing_a_group_screener_report_screener_roster_report.htm" />
+    <Content Include="Help\producing_child_reports.htm" />
+    <Content Include="Help\producing_group_reports.htm" />
+    <Content Include="Help\producing_reports.htm" />
+    <Content Include="Help\quitting_the_program.htm" />
+    <Content Include="Help\reports.htm" />
+    <Content Include="Help\rerostering.htm" />
+    <Content Include="Help\searching_child_records.htm" />
+    <Content Include="Help\searching_staff_records.htm" />
+    <Content Include="Help\selecting_report_types.htm" />
+    <Content Include="Help\settings.js" />
+    <Content Include="Help\staff_administration.htm" />
+    <Content Include="Help\using_the_menus.htm" />
+    <Content Include="Help\viewing_rosters.htm" />
+    <Content Include="Help\welcome_to_the_bdi_2_data_manager_help.htm" />
+    <Content Include="Help\welcome_to_the_bdi_2_data_manager_help_contents.htm" />
+    <Content Include="Help\zoom_index.js" />
+    <Content Include="Help\zoom_pageinfo.js" />
+    <Content Include="Help\zoom_search.js" />
+    <Content Include="Hierarchy\ManageMemberType.aspx" />
+    <Content Include="Images\AddDatabase32x32.gif" />
+    <Content Include="Images\assessment.gif" />
+    <Content Include="Images\Calendar.gif" />
+    <Content Include="Images\delete.gif" />
+    <Content Include="Images\edit.gif" />
+    <Content Include="Images\item_details.gif" />
+    <Content Include="Images\loading3.gif" />
+    <Content Include="Images\loading6.gif" />
+    <Content Include="Images\logo.jpg" />
+    <Content Include="Images\notes.gif" />
+    <Content Include="Images\password.gif" />
+    <Content Include="Images\raw_scores.gif" />
+    <Content Include="Images\report.gif" />
+    <Content Include="Images\undelete.gif" />
+    <Content Include="IntroOneLogo.Master" />
+    <Content Include="Notes\ChildNotes.aspx" />
+    <Content Include="Notes\HSGeneralNote.aspx" />
+    <Content Include="Notes\HSMandatedNote.aspx" />
+    <Content Include="Notes\NoteCalendar.aspx" />
+    <Content Include="Notes\NoteObserver.aspx" />
+    <Content Include="RadControls\Splitter\Skins\Web20\Img\close.gif" />
+    <Content Include="RadControls\Splitter\Skins\Web20\Img\collapseBarBg.gif" />
+    <Content Include="RadControls\Splitter\Skins\Web20\Img\collapsebarHorizontal.gif" />
+    <Content Include="RadControls\Splitter\Skins\Web20\Img\collapsebarHorizontalOver.gif" />
+    <Content Include="RadControls\Splitter\Skins\Web20\Img\collapsebarOver.gif" />
+    <Content Include="RadControls\Splitter\Skins\Web20\Img\dock.gif" />
+    <Content Include="RadControls\Splitter\Skins\Web20\Img\paneTabContainer.gif" />
+    <Content Include="RadControls\Splitter\Skins\Web20\Img\paneTabContainerBottom.gif" />
+    <Content Include="RadControls\Splitter\Skins\Web20\Img\paneTabContainerDocked.gif" />
+    <Content Include="RadControls\Splitter\Skins\Web20\Img\paneTabContainerDockedBottom.gif" />
+    <Content Include="RadControls\Splitter\Skins\Web20\Img\paneTabContainerDockedRight.gif" />
+    <Content Include="RadControls\Splitter\Skins\Web20\Img\paneTabContainerDockedTop.gif" />
+    <Content Include="RadControls\Splitter\Skins\Web20\Img\paneTabContainerExpanded.gif" />
+    <Content Include="RadControls\Splitter\Skins\Web20\Img\paneTabContainerExpandedBottom.gif" />
+    <Content Include="RadControls\Splitter\Skins\Web20\Img\paneTabContainerExpandedRight.gif" />
+    <Content Include="RadControls\Splitter\Skins\Web20\Img\paneTabContainerExpandedTop.gif" />
+    <Content Include="RadControls\Splitter\Skins\Web20\Img\paneTabContainerRight.gif" />
+    <Content Include="RadControls\Splitter\Skins\Web20\Img\paneTabContainerTop.gif" />
+    <Content Include="RadControls\Splitter\Skins\Web20\Img\resizeBar.gif" />
+    <Content Include="RadControls\Splitter\Skins\Web20\Img\resizeBarHorizontal.gif" />
+    <Content Include="RadControls\Splitter\Skins\Web20\Img\slideHeader.gif" />
+    <Content Include="RadControls\Splitter\Skins\Web20\Img\space.gif" />
+    <Content Include="RadControls\Splitter\Skins\Web20\Img\splitbar_collapse_h.gif" />
+    <Content Include="RadControls\Splitter\Skins\Web20\Img\splitbar_collapse_v.gif" />
+    <Content Include="RadControls\Splitter\Skins\Web20\Img\splitbar_expand_h.gif" />
+    <Content Include="RadControls\Splitter\Skins\Web20\Img\splitbar_expand_v.gif" />
+    <Content Include="RadControls\Splitter\Skins\Web20\Img\undock.gif" />
+    <Content Include="RadControls\Splitter\Skins\Web20\Img\_collapsebarHorizontal.gif" />
+    <Content Include="RadControls\Splitter\Skins\Web20\Img\_collapsebarHorizontalOver.gif" />
+    <Content Include="RadControls\Splitter\Skins\Web20\styles.css" />
+    <Content Include="ReportSelection\GroupReportSelection.aspx" />
+    <Content Include="StaffAdmin\AddNewStaff.aspx" />
+    <Content Include="Student\MergeStudent.aspx" />
+    <Content Include="UserDefinedLabelManagement\UserDefinedLabelManagement.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ExIm\Export.aspx" />
+    <Content Include="ExIm\Import.aspx" />
+    <Content Include="Help\exporting_data.htm" />
+    <Content Include="Help\importexport.htm" />
+    <Content Include="Help\importing_data.htm" />
+    <Content Include="Help\preparing_information_to_import_into_the_bdi_2_data_manager.htm" />
+    <Content Include="Help\producing_a_child_screener_report_test_record_report.htm" />
+    <Content Include="IntroWithLogout.Master" />
+    <Content Include="Student\AddChild.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="RadControls\Grid\Skins\Default\AddRecord.gif" />
+    <Content Include="RadControls\Grid\Skins\Default\Cancel.gif" />
+    <Content Include="RadControls\Grid\Skins\Default\Copy of Styles.css" />
+    <Content Include="RadControls\Grid\Skins\Default\Default.gif" />
+    <Content Include="RadControls\Grid\Skins\Default\Delete.gif" />
+    <Content Include="RadControls\Grid\Skins\Default\Edit.gif" />
+    <Content Include="RadControls\Grid\Skins\Default\Filter.gif" />
+    <Content Include="RadControls\Grid\Skins\Default\img\filterBg.gif" />
+    <Content Include="RadControls\Grid\Skins\Default\img\groupBg.gif" />
+    <Content Include="RadControls\Grid\Skins\Default\img\groupHeaderBg.gif" />
+    <Content Include="RadControls\Grid\Skins\Default\img\headerBg.gif" />
+    <Content Include="RadControls\Grid\Skins\Default\img\headerSeparator.gif" />
+    <Content Include="RadControls\Grid\Skins\Default\img\MoveDown.gif" />
+    <Content Include="RadControls\Grid\Skins\Default\img\MoveUp.gif" />
+    <Content Include="RadControls\Grid\Skins\Default\Insert.gif" />
+    <Content Include="RadControls\Grid\Skins\Default\Loading.gif" />
+    <Content Include="RadControls\Grid\Skins\Default\NotSelectedMenu.gif" />
+    <Content Include="RadControls\Grid\Skins\Default\Refresh.gif" />
+    <Content Include="RadControls\Grid\Skins\Default\SelectedMenu.gif" />
+    <Content Include="RadControls\Grid\Skins\Default\SingleMinus.gif" />
+    <Content Include="RadControls\Grid\Skins\Default\SinglePlus.gif" />
+    <Content Include="RadControls\Grid\Skins\Default\SortAsc.gif" />
+    <Content Include="RadControls\Grid\Skins\Default\SortDesc.gif" />
+    <Content Include="RadControls\Grid\Skins\Default\Styles.css" />
+    <Content Include="RadControls\Grid\Skins\Default\Update.gif" />
+    <Content Include="RadControls\Grid\Skins\RadGrid_Default_thumb.gif" />
+    <Content Include="RadControls\Grid\Skins\ReadMe.html" />
+    <Content Include="Student\MergeStudentRoster.aspx" />
+    <Content Include="Welcome\ReleaseNotes.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AddNewPassword.aspx" />
+    <Content Include="Download\MDSEula.aspx" />
+    <Content Include="Download\MobileDataSolution.aspx" />
+    <Content Include="ERFs\ERFManagement.aspx" />
+    <Content Include="ERFs\ERFManagementRootLevel.ascx" />
+    <Content Include="Error.aspx" />
+    <Content Include="ExIm\AppliedFilters.aspx" />
+    <Content Include="ExIm\RunScheduleJob.aspx" />
+    <Content Include="ExIm\ScheduledStatus.aspx" />
+    <Content Include="ExIm\ScheduleUpload.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Help\bdi2datamigrationproject_content_dyn.html" />
+    <Content Include="Help\bdi2datamigrationproject_content_static.html" />
+    <Content Include="Help\bdi2datamigrationproject_ftsearch.html" />
+    <Content Include="Help\bdi2datamigrationproject_kwindex_dyn.html" />
+    <Content Include="Help\bdi2datamigrationproject_kwindex_static.html" />
+    <Content Include="Help\bdi2datamigrationproject_navigation.js" />
+    <Content Include="Help\BDI2DataMigrationProject_popup_html.js" />
+    <Content Include="Help\importing_data_from_other_bdi_2_data_manager_web_accounts.htm" />
+    <Content Include="Help\monitoring_and_downloading_scheduled_imports_exports_and_reports.htm" />
+    <Content Include="Help\organizing_and_managing_children_s_records.htm" />
+    <Content Include="Help\producing_a_child_complete_report_report_to_family_in_english.htm" />
+    <Content Include="Help\producing_a_child_screener_report_comprehensive_report.htm" />
+    <Content Include="Help\producing_a_group_complete_report_roster_report.htm" />
+    <Content Include="Help\rostering_migrated_children.htm" />
+    <Content Include="Help\_img1.gif" />
+    <Content Include="Help\_img10.gif" />
+    <Content Include="Help\_img100.gif" />
+    <Content Include="Help\_img101.gif" />
+    <Content Include="Help\_img102.gif" />
+    <Content Include="Help\_img103.gif" />
+    <Content Include="Help\_img104.gif" />
+    <Content Include="Help\_img105.gif" />
+    <Content Include="Help\_img106.gif" />
+    <Content Include="Help\_img107.gif" />
+    <Content Include="Help\_img108.gif" />
+    <Content Include="Help\_img109.gif" />
+    <Content Include="Help\_img11.gif" />
+    <Content Include="Help\_img110.gif" />
+    <Content Include="Help\_img111.gif" />
+    <Content Include="Help\_img112.gif" />
+    <Content Include="Help\_img113.gif" />
+    <Content Include="Help\_img114.gif" />
+    <Content Include="Help\_img115.gif" />
+    <Content Include="Help\_img116.gif" />
+    <Content Include="Help\_img117.gif" />
+    <Content Include="Help\_img118.gif" />
+    <Content Include="Help\_img119.gif" />
+    <Content Include="Help\_img12.gif" />
+    <Content Include="Help\_img120.gif" />
+    <Content Include="Help\_img121.gif" />
+    <Content Include="Help\_img122.gif" />
+    <Content Include="Help\_img123.gif" />
+    <Content Include="Help\_img124.gif" />
+    <Content Include="Help\_img125.gif" />
+    <Content Include="Help\_img126.gif" />
+    <Content Include="Help\_img127.gif" />
+    <Content Include="Help\_img128.gif" />
+    <Content Include="Help\_img129.gif" />
+    <Content Include="Help\_img13.gif" />
+    <Content Include="Help\_img130.gif" />
+    <Content Include="Help\_img131.gif" />
+    <Content Include="Help\_img132.gif" />
+    <Content Include="Help\_img133.gif" />
+    <Content Include="Help\_img134.gif" />
+    <Content Include="Help\_img135.gif" />
+    <Content Include="Help\_img136.gif" />
+    <Content Include="Help\_img137.gif" />
+    <Content Include="Help\_img138.gif" />
+    <Content Include="Help\_img139.gif" />
+    <Content Include="Help\_img14.gif" />
+    <Content Include="Help\_img140.gif" />
+    <Content Include="Help\_img141.gif" />
+    <Content Include="Help\_img142.gif" />
+    <Content Include="Help\_img143.gif" />
+    <Content Include="Help\_img144.gif" />
+    <Content Include="Help\_img145.gif" />
+    <Content Include="Help\_img146.gif" />
+    <Content Include="Help\_img147.gif" />
+    <Content Include="Help\_img148.gif" />
+    <Content Include="Help\_img149.gif" />
+    <Content Include="Help\_img15.gif" />
+    <Content Include="Help\_img150.gif" />
+    <Content Include="Help\_img151.gif" />
+    <Content Include="Help\_img152.gif" />
+    <Content Include="Help\_img153.gif" />
+    <Content Include="Help\_img154.gif" />
+    <Content Include="Help\_img155.gif" />
+    <Content Include="Help\_img156.gif" />
+    <Content Include="Help\_img157.gif" />
+    <Content Include="Help\_img158.gif" />
+    <Content Include="Help\_img159.gif" />
+    <Content Include="Help\_img16.gif" />
+    <Content Include="Help\_img160.gif" />
+    <Content Include="Help\_img161.gif" />
+    <Content Include="Help\_img162.gif" />
+    <Content Include="Help\_img163.gif" />
+    <Content Include="Help\_img164.gif" />
+    <Content Include="Help\_img165.gif" />
+    <Content Include="Help\_img166.gif" />
+    <Content Include="Help\_img167.gif" />
+    <Content Include="Help\_img168.gif" />
+    <Content Include="Help\_img169.gif" />
+    <Content Include="Help\_img17.gif" />
+    <Content Include="Help\_img170.gif" />
+    <Content Include="Help\_img171.gif" />
+    <Content Include="Help\_img172.gif" />
+    <Content Include="Help\_img173.gif" />
+    <Content Include="Help\_img174.gif" />
+    <Content Include="Help\_img175.gif" />
+    <Content Include="Help\_img176.gif" />
+    <Content Include="Help\_img177.gif" />
+    <Content Include="Help\_img178.gif" />
+    <Content Include="Help\_img179.gif" />
+    <Content Include="Help\_img18.gif" />
+    <Content Include="Help\_img180.gif" />
+    <Content Include="Help\_img181.gif" />
+    <Content Include="Help\_img182.gif" />
+    <Content Include="Help\_img183.gif" />
+    <Content Include="Help\_img184.gif" />
+    <Content Include="Help\_img185.gif" />
+    <Content Include="Help\_img186.gif" />
+    <Content Include="Help\_img187.gif" />
+    <Content Include="Help\_img188.gif" />
+    <Content Include="Help\_img189.gif" />
+    <Content Include="Help\_img19.gif" />
+    <Content Include="Help\_img190.gif" />
+    <Content Include="Help\_img191.gif" />
+    <Content Include="Help\_img192.gif" />
+    <Content Include="Help\_img193.gif" />
+    <Content Include="Help\_img194.gif" />
+    <Content Include="Help\_img195.gif" />
+    <Content Include="Help\_img196.gif" />
+    <Content Include="Help\_img197.gif" />
+    <Content Include="Help\_img198.gif" />
+    <Content Include="Help\_img199.gif" />
+    <Content Include="Help\_img2.gif" />
+    <Content Include="Help\_img20.gif" />
+    <Content Include="Help\_img200.gif" />
+    <Content Include="Help\_img201.gif" />
+    <Content Include="Help\_img21.gif" />
+    <Content Include="Help\_img22.gif" />
+    <Content Include="Help\_img23.gif" />
+    <Content Include="Help\_img24.gif" />
+    <Content Include="Help\_img25.gif" />
+    <Content Include="Help\_img26.gif" />
+    <Content Include="Help\_img27.gif" />
+    <Content Include="Help\_img28.gif" />
+    <Content Include="Help\_img29.gif" />
+    <Content Include="Help\_img3.gif" />
+    <Content Include="Help\_img30.gif" />
+    <Content Include="Help\_img31.gif" />
+    <Content Include="Help\_img32.gif" />
+    <Content Include="Help\_img33.gif" />
+    <Content Include="Help\_img34.gif" />
+    <Content Include="Help\_img35.gif" />
+    <Content Include="Help\_img36.gif" />
+    <Content Include="Help\_img37.gif" />
+    <Content Include="Help\_img38.gif" />
+    <Content Include="Help\_img39.gif" />
+    <Content Include="Help\_img4.gif" />
+    <Content Include="Help\_img40.gif" />
+    <Content Include="Help\_img41.gif" />
+    <Content Include="Help\_img42.gif" />
+    <Content Include="Help\_img43.gif" />
+    <Content Include="Help\_img44.gif" />
+    <Content Include="Help\_img45.gif" />
+    <Content Include="Help\_img46.gif" />
+    <Content Include="Help\_img47.gif" />
+    <Content Include="Help\_img48.gif" />
+    <Content Include="Help\_img49.gif" />
+    <Content Include="Help\_img5.gif" />
+    <Content Include="Help\_img50.gif" />
+    <Content Include="Help\_img51.gif" />
+    <Content Include="Help\_img52.gif" />
+    <Content Include="Help\_img53.gif" />
+    <Content Include="Help\_img54.gif" />
+    <Content Include="Help\_img55.gif" />
+    <Content Include="Help\_img56.gif" />
+    <Content Include="Help\_img57.gif" />
+    <Content Include="Help\_img58.gif" />
+    <Content Include="Help\_img59.gif" />
+    <Content Include="Help\_img6.gif" />
+    <Content Include="Help\_img60.gif" />
+    <Content Include="Help\_img61.gif" />
+    <Content Include="Help\_img62.gif" />
+    <Content Include="Help\_img63.gif" />
+    <Content Include="Help\_img64.gif" />
+    <Content Include="Help\_img65.gif" />
+    <Content Include="Help\_img66.gif" />
+    <Content Include="Help\_img67.gif" />
+    <Content Include="Help\_img68.gif" />
+    <Content Include="Help\_img69.gif" />
+    <Content Include="Help\_img7.gif" />
+    <Content Include="Help\_img70.gif" />
+    <Content Include="Help\_img71.gif" />
+    <Content Include="Help\_img72.gif" />
+    <Content Include="Help\_img73.gif" />
+    <Content Include="Help\_img74.gif" />
+    <Content Include="Help\_img75.gif" />
+    <Content Include="Help\_img76.gif" />
+    <Content Include="Help\_img77.gif" />
+    <Content Include="Help\_img78.gif" />
+    <Content Include="Help\_img79.gif" />
+    <Content Include="Help\_img8.gif" />
+    <Content Include="Help\_img80.gif" />
+    <Content Include="Help\_img81.gif" />
+    <Content Include="Help\_img82.gif" />
+    <Content Include="Help\_img83.gif" />
+    <Content Include="Help\_img84.gif" />
+    <Content Include="Help\_img85.gif" />
+    <Content Include="Help\_img86.gif" />
+    <Content Include="Help\_img87.gif" />
+    <Content Include="Help\_img88.gif" />
+    <Content Include="Help\_img89.gif" />
+    <Content Include="Help\_img9.gif" />
+    <Content Include="Help\_img90.gif" />
+    <Content Include="Help\_img91.gif" />
+    <Content Include="Help\_img92.gif" />
+    <Content Include="Help\_img93.gif" />
+    <Content Include="Help\_img94.gif" />
+    <Content Include="Help\_img95.gif" />
+    <Content Include="Help\_img96.gif" />
+    <Content Include="Help\_img97.gif" />
+    <Content Include="Help\_img98.gif" />
+    <Content Include="Help\_img99.gif" />
+    <Content Include="Images\banner_home.gif" />
+    <Content Include="Images\BDI-2_NU_Logo.gif" />
+    <Content Include="Images\download_1.gif" />
+    <Content Include="Images\filter_2.gif" />
+    <Content Include="Images\Riverside_Insights.gif" />
+    <Content Include="Images\roster_3.gif" />
+    <Content Include="js\IdealTimeout.js" />
+    <Content Include="MDSHelp\Assessments\Administering_an_Assessment.htm" />
+    <Content Include="MDSHelp\Assessments\Assessments_Home.htm" />
+    <Content Include="MDSHelp\Assessments\Resume_an_Assessment.htm" />
+    <Content Include="MDSHelp\Assessments\Start_a_New_Assessment.htm" />
+    <Content Include="MDSHelp\BDI-2.htm" />
+    <Content Include="MDSHelp\BDI-2_csh.htm" />
+    <Content Include="MDSHelp\BDI-2_rhc.htm" />
+    <Content Include="MDSHelp\BDI2.css" />
+    <Content Include="MDSHelp\Child_Information\Actions_Column.htm" />
+    <Content Include="MDSHelp\Child_Information\Add_a_Child_Record.htm" />
+    <Content Include="MDSHelp\Child_Information\Browse_or_Update_a_Child_Record.htm" />
+    <Content Include="MDSHelp\Child_Information\Child_Information_Home.htm" />
+    <Content Include="MDSHelp\Child_Information\Delete_a_Child_Record.htm" />
+    <Content Include="MDSHelp\Child_Information\Update_a_Child_Record.htm" />
+    <Content Include="MDSHelp\cshdat_robohelp.htm" />
+    <Content Include="MDSHelp\cshdat_webhelp.htm" />
+    <Content Include="MDSHelp\ehlpdhtm.js" />
+    <Content Include="MDSHelp\Home\Help.htm" />
+    <Content Include="MDSHelp\Home\Home_Screen.htm" />
+    <Content Include="MDSHelp\Home\Upload.htm" />
+    <Content Include="MDSHelp\Home\User_Settings.htm" />
+    <Content Include="MDSHelp\image1.gif" />
+    <Content Include="MDSHelp\image10.jpg" />
+    <Content Include="MDSHelp\image11.jpg" />
+    <Content Include="MDSHelp\image12.jpg" />
+    <Content Include="MDSHelp\image13.jpg" />
+    <Content Include="MDSHelp\image14.gif" />
+    <Content Include="MDSHelp\image14.jpg" />
+    <Content Include="MDSHelp\image15.gif" />
+    <Content Include="MDSHelp\image15.jpg" />
+    <Content Include="MDSHelp\image16.gif" />
+    <Content Include="MDSHelp\image16.jpg" />
+    <Content Include="MDSHelp\image17.gif" />
+    <Content Include="MDSHelp\image18.gif" />
+    <Content Include="MDSHelp\image18.jpg" />
+    <Content Include="MDSHelp\image19.gif" />
+    <Content Include="MDSHelp\image20.gif" />
+    <Content Include="MDSHelp\image21.gif" />
+    <Content Include="MDSHelp\image22.gif" />
+    <Content Include="MDSHelp\image23.gif" />
+    <Content Include="MDSHelp\image24.gif" />
+    <Content Include="MDSHelp\image25.gif" />
+    <Content Include="MDSHelp\image25.jpg" />
+    <Content Include="MDSHelp\image26.jpg" />
+    <Content Include="MDSHelp\image27.gif" />
+    <Content Include="MDSHelp\image28.gif" />
+    <Content Include="MDSHelp\image29.gif" />
+    <Content Include="MDSHelp\image29.jpg" />
+    <Content Include="MDSHelp\image30.gif" />
+    <Content Include="MDSHelp\image31.gif" />
+    <Content Include="MDSHelp\image32.gif" />
+    <Content Include="MDSHelp\image32.jpg" />
+    <Content Include="MDSHelp\image33.jpg" />
+    <Content Include="MDSHelp\image34.gif" />
+    <Content Include="MDSHelp\image34.jpg" />
+    <Content Include="MDSHelp\image35.gif" />
+    <Content Include="MDSHelp\image35.jpg" />
+    <Content Include="MDSHelp\image36.gif" />
+    <Content Include="MDSHelp\image36.jpg" />
+    <Content Include="MDSHelp\image37.gif" />
+    <Content Include="MDSHelp\image37.jpg" />
+    <Content Include="MDSHelp\image38.gif" />
+    <Content Include="MDSHelp\image38.jpg" />
+    <Content Include="MDSHelp\image39.gif" />
+    <Content Include="MDSHelp\image4.gif" />
+    <Content Include="MDSHelp\image4.jpg" />
+    <Content Include="MDSHelp\image40.gif" />
+    <Content Include="MDSHelp\image41.gif" />
+    <Content Include="MDSHelp\image41.jpg" />
+    <Content Include="MDSHelp\image42.gif" />
+    <Content Include="MDSHelp\image42.jpg" />
+    <Content Include="MDSHelp\image43.jpg" />
+    <Content Include="MDSHelp\image44.gif" />
+    <Content Include="MDSHelp\image45.gif" />
+    <Content Include="MDSHelp\image45.jpg" />
+    <Content Include="MDSHelp\image46.jpg" />
+    <Content Include="MDSHelp\image47.jpg" />
+    <Content Include="MDSHelp\image5.gif" />
+    <Content Include="MDSHelp\image5.jpg" />
+    <Content Include="MDSHelp\image6.gif" />
+    <Content Include="MDSHelp\image6.jpg" />
+    <Content Include="MDSHelp\image8.jpg" />
+    <Content Include="MDSHelp\My_Activities\Assessments_Home.htm" />
+    <Content Include="MDSHelp\My_Activities\Assessments_in_Progress.htm" />
+    <Content Include="MDSHelp\My_Activities\Assessments_Ready_for_Upload.htm" />
+    <Content Include="MDSHelp\My_Activities\Failed_Data_Transfers.htm" />
+    <Content Include="MDSHelp\My_Activities\Unassigned_Child_Records.htm" />
+    <Content Include="MDSHelp\My_Activities\Upload_History.htm" />
+    <Content Include="MDSHelp\Reports\Reports_Home.htm" />
+    <Content Include="MDSHelp\Reports\Report_to_Family.htm" />
+    <Content Include="MDSHelp\Reports\Score_View.htm" />
+    <Content Include="MDSHelp\Reports\View_Scores_and_Reports.htm" />
+    <Content Include="MDSHelp\resource\resource.xml" />
+    <Content Include="MDSHelp\Setup\Installation.htm" />
+    <Content Include="MDSHelp\whbrs.xml" />
+    <Content Include="MDSHelp\whcshdata.htm" />
+    <Content Include="MDSHelp\whcsh_home.htm" />
+    <Content Include="MDSHelp\whdata\whgdata.js" />
+    <Content Include="MDSHelp\whdata\whglo.htm" />
+    <Content Include="MDSHelp\whdata\whglo.js" />
+    <Content Include="MDSHelp\whdata\whidata.js" />
+    <Content Include="MDSHelp\whdata\whidx.htm" />
+    <Content Include="MDSHelp\whdata\whidx.js" />
+    <Content Include="MDSHelp\whdata\whtdata.js" />
+    <Content Include="MDSHelp\whdata\whtdata0.htm" />
+    <Content Include="MDSHelp\whdata\whtoc.htm" />
+    <Content Include="MDSHelp\whdata\whtoc.js" />
+    <Content Include="MDSHelp\whestart.ico" />
+    <Content Include="MDSHelp\whfbody.htm" />
+    <Content Include="MDSHelp\whfdhtml.htm" />
+    <Content Include="MDSHelp\whfform.htm" />
+    <Content Include="MDSHelp\whfhost.js" />
+    <Content Include="MDSHelp\whform.js" />
+    <Content Include="MDSHelp\whframes.js" />
+    <Content Include="MDSHelp\whgbody.htm" />
+    <Content Include="MDSHelp\whgdata\whexpbar.gif" />
+    <Content Include="MDSHelp\whgdata\whlstf0.htm" />
+    <Content Include="MDSHelp\whgdata\whlstf1.htm" />
+    <Content Include="MDSHelp\whgdata\whlstf2.htm" />
+    <Content Include="MDSHelp\whgdata\whlstf3.htm" />
+    <Content Include="MDSHelp\whgdata\whlstfl0.htm" />
+    <Content Include="MDSHelp\whgdata\whlstfl1.htm" />
+    <Content Include="MDSHelp\whgdata\whlstfl10.htm" />
+    <Content Include="MDSHelp\whgdata\whlstfl11.htm" />
+    <Content Include="MDSHelp\whgdata\whlstfl12.htm" />
+    <Content Include="MDSHelp\whgdata\whlstfl13.htm" />
+    <Content Include="MDSHelp\whgdata\whlstfl14.htm" />
+    <Content Include="MDSHelp\whgdata\whlstfl15.htm" />
+    <Content Include="MDSHelp\whgdata\whlstfl16.htm" />
+    <Content Include="MDSHelp\whgdata\whlstfl17.htm" />
+    <Content Include="MDSHelp\whgdata\whlstfl18.htm" />
+    <Content Include="MDSHelp\whgdata\whlstfl19.htm" />
+    <Content Include="MDSHelp\whgdata\whlstfl2.htm" />
+    <Content Include="MDSHelp\whgdata\whlstfl20.htm" />
+    <Content Include="MDSHelp\whgdata\whlstfl21.htm" />
+    <Content Include="MDSHelp\whgdata\whlstfl3.htm" />
+    <Content Include="MDSHelp\whgdata\whlstfl4.htm" />
+    <Content Include="MDSHelp\whgdata\whlstfl5.htm" />
+    <Content Include="MDSHelp\whgdata\whlstfl6.htm" />
+    <Content Include="MDSHelp\whgdata\whlstfl7.htm" />
+    <Content Include="MDSHelp\whgdata\whlstfl8.htm" />
+    <Content Include="MDSHelp\whgdata\whlstfl9.htm" />
+    <Content Include="MDSHelp\whgdata\whlstg0.htm" />
+    <Content Include="MDSHelp\whgdata\whlsti0.htm" />
+    <Content Include="MDSHelp\whgdata\whlstt0.htm" />
+    <Content Include="MDSHelp\whgdata\whlstt1.htm" />
+    <Content Include="MDSHelp\whgdata\whlstt2.htm" />
+    <Content Include="MDSHelp\whgdata\whlstt3.htm" />
+    <Content Include="MDSHelp\whgdata\whlstt4.htm" />
+    <Content Include="MDSHelp\whgdata\whlstt5.htm" />
+    <Content Include="MDSHelp\whgdata\whlstt6.htm" />
+    <Content Include="MDSHelp\whgdata\whlstt7.htm" />
+    <Content Include="MDSHelp\whgdata\whnvf30.htm" />
+    <Content Include="MDSHelp\whgdata\whnvf31.htm" />
+    <Content Include="MDSHelp\whgdata\whnvf32.htm" />
+    <Content Include="MDSHelp\whgdata\whnvf33.htm" />
+    <Content Include="MDSHelp\whgdata\whnvl31.htm" />
+    <Content Include="MDSHelp\whgdata\whnvl32.htm" />
+    <Content Include="MDSHelp\whgdata\whnvl33.htm" />
+    <Content Include="MDSHelp\whgdata\whnvp30.htm" />
+    <Content Include="MDSHelp\whgdata\whnvp31.htm" />
+    <Content Include="MDSHelp\whgdata\whnvp32.htm" />
+    <Content Include="MDSHelp\whgdata\whnvp33.htm" />
+    <Content Include="MDSHelp\whgdata\whnvt30.htm" />
+    <Content Include="MDSHelp\whgdata\whnvt31.htm" />
+    <Content Include="MDSHelp\whgdata\whnvt32.htm" />
+    <Content Include="MDSHelp\whgdata\whnvt33.htm" />
+    <Content Include="MDSHelp\whgdef.htm" />
+    <Content Include="MDSHelp\whgdhtml.htm" />
+    <Content Include="MDSHelp\whghost.js" />
+    <Content Include="MDSHelp\whhost.js" />
+    <Content Include="MDSHelp\whibody.htm" />
+    <Content Include="MDSHelp\whidhtml.htm" />
+    <Content Include="MDSHelp\whiform.htm" />
+    <Content Include="MDSHelp\whihost.js" />
+    <Content Include="MDSHelp\whlang.js" />
+    <Content Include="MDSHelp\whmozemu.js" />
+    <Content Include="MDSHelp\whmsg.js" />
+    <Content Include="MDSHelp\whnjs.htm" />
+    <Content Include="MDSHelp\whphost.js" />
+    <Content Include="MDSHelp\whproj.htm" />
+    <Content Include="MDSHelp\whproj.js" />
+    <Content Include="MDSHelp\whproj.xml" />
+    <Content Include="MDSHelp\whproxy.js" />
+    <Content Include="MDSHelp\whres.xml" />
+    <Content Include="MDSHelp\whrstart.ico" />
+    <Content Include="MDSHelp\whskin_banner.htm" />
+    <Content Include="MDSHelp\whskin_blank.htm" />
+    <Content Include="MDSHelp\whskin_frmset01.htm" />
+    <Content Include="MDSHelp\whskin_frmset010.htm" />
+    <Content Include="MDSHelp\whskin_homepage.htm" />
+    <Content Include="MDSHelp\whskin_info.htm" />
+    <Content Include="MDSHelp\whskin_mbars.htm" />
+    <Content Include="MDSHelp\whskin_pdhtml.htm" />
+    <Content Include="MDSHelp\whskin_pickup.htm" />
+    <Content Include="MDSHelp\whskin_plist.htm" />
+    <Content Include="MDSHelp\whskin_tbars.htm" />
+    <Content Include="MDSHelp\whskin_tw.htm" />
+    <Content Include="MDSHelp\whstart.ico" />
+    <Content Include="MDSHelp\whstart.js" />
+    <Content Include="MDSHelp\whstub.js" />
+    <Content Include="MDSHelp\whst_topics.xml" />
+    <Content Include="MDSHelp\whtbar.js" />
+    <Content Include="MDSHelp\whtdhtml.htm" />
+    <Content Include="MDSHelp\whthost.js" />
+    <Content Include="MDSHelp\whtopic.js" />
+    <Content Include="MDSHelp\wht_abge.jpg" />
+    <Content Include="MDSHelp\wht_abgi.jpg" />
+    <Content Include="MDSHelp\wht_abgw.jpg" />
+    <Content Include="MDSHelp\wht_abte.jpg" />
+    <Content Include="MDSHelp\wht_abti.jpg" />
+    <Content Include="MDSHelp\wht_abtw.jpg" />
+    <Content Include="MDSHelp\wht_fts_h.gif" />
+    <Content Include="MDSHelp\wht_fts_n.gif" />
+    <Content Include="MDSHelp\wht_glo_h.gif" />
+    <Content Include="MDSHelp\wht_glo_n.gif" />
+    <Content Include="MDSHelp\wht_go.gif" />
+    <Content Include="MDSHelp\wht_hide.gif" />
+    <Content Include="MDSHelp\wht_idx_h.gif" />
+    <Content Include="MDSHelp\wht_idx_n.gif" />
+    <Content Include="MDSHelp\wht_logo1.gif" />
+    <Content Include="MDSHelp\wht_logo2.gif" />
+    <Content Include="MDSHelp\wht_next.gif" />
+    <Content Include="MDSHelp\wht_next_g.gif" />
+    <Content Include="MDSHelp\wht_prev.gif" />
+    <Content Include="MDSHelp\wht_prev_g.gif" />
+    <Content Include="MDSHelp\wht_spac.gif" />
+    <Content Include="MDSHelp\wht_sync.gif" />
+    <Content Include="MDSHelp\wht_tab0.gif" />
+    <Content Include="MDSHelp\wht_tab1.gif" />
+    <Content Include="MDSHelp\wht_tab2.gif" />
+    <Content Include="MDSHelp\wht_tab3.gif" />
+    <Content Include="MDSHelp\wht_tab4.gif" />
+    <Content Include="MDSHelp\wht_tab5.gif" />
+    <Content Include="MDSHelp\wht_tab6.gif" />
+    <Content Include="MDSHelp\wht_tab7.gif" />
+    <Content Include="MDSHelp\wht_tab8.gif" />
+    <Content Include="MDSHelp\wht_toc1.gif" />
+    <Content Include="MDSHelp\wht_toc2.gif" />
+    <Content Include="MDSHelp\wht_toc3.gif" />
+    <Content Include="MDSHelp\wht_toc4.gif" />
+    <Content Include="MDSHelp\wht_toc_h.gif" />
+    <Content Include="MDSHelp\wht_toc_n.gif" />
+    <Content Include="MDSHelp\wht_ws.gif" />
+    <Content Include="MDSHelp\wht_ws_g.gif" />
+    <Content Include="MDSHelp\whutils.js" />
+    <Content Include="MDSHelp\whver.js" />
+    <Content Include="MDSHelp\whxdata\packageindex.xml" />
+    <Content Include="MDSHelp\whxdata\package_0.xml" />
+    <Content Include="MDSHelp\whxdata\synonym.xml" />
+    <Content Include="MDSHelp\whxdata\topictableindex.xml" />
+    <Content Include="MDSHelp\whxdata\topictable_0.xml" />
+    <Content Include="MDSHelp\whxdata\whfts.xml" />
+    <Content Include="MDSHelp\whxdata\whglo.xml" />
+    <Content Include="MDSHelp\whxdata\whidx.xml" />
+    <Content Include="MDSHelp\whxdata\whtdata0.xml" />
+    <Content Include="MDSHelp\whxdata\whtoc.xml" />
+    <Content Include="MDSLicenses\MDSLicenseManagement.aspx" />
+    <Content Include="MDSLicenses\MDSManagementRootLevel.ascx" />
+    <Content Include="ProfilePage.aspx" />
+    <Content Include="RadControls\Grid\Skins\Default\Grid.Telerik.css" />
+    <Content Include="RadControls\Grid\Skins\Default\MoveDown.gif" />
+    <Content Include="RadControls\Grid\Skins\Default\MoveUp.gif" />
+    <Content Include="RadControls\Grid\Skins\Default\PagingFirst.gif" />
+    <Content Include="RadControls\Grid\Skins\Default\PagingLast.gif" />
+    <Content Include="RadControls\Grid\Skins\Default\PagingNext.gif" />
+    <Content Include="RadControls\Grid\Skins\Default\PagingPrev.gif" />
+    <Content Include="RadControls\Grid\Skins\Default\sprite.gif" />
+    <Content Include="RadControls\Menu\Skins\CssChild\Menu.CssChild.css" />
+    <Content Include="RadControls\Menu\Skins\CssExim\Menu.CssExim.css" />
+    <Content Include="RadControls\Menu\Skins\CssHierarchy\Menu.Hierarchy.css" />
+    <Content Include="RadControls\Menu\Skins\CssReport\Menu.CssReport.css" />
+    <Content Include="RadControls\Menu\Skins\CssStaff\Menu.CssStaff.css" />
+    <Content Include="RadControls\Menu\Skins\CssTopLevel\Menu.CssTopLevel.css" />
+    <None Include="Download\MDSInstallInstructions.pdf" />
+    <None Include="ExIm\ImportExportFormat.xls" />
+    <None Include="ExIm\ImportFormat.xls" />
+    <None Include="ReferencedAssemblies\AjaxControlToolkit.dll" />
+    <None Include="ReferencedAssemblies\Interop.PDStandardLib.dll" />
+    <None Include="ReferencedAssemblies\Ionic.Zip.dll" />
+    <None Include="ReferencedAssemblies\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+    <None Include="ReferencedAssemblies\Microsoft.Practices.EnterpriseLibrary.Common.xml" />
+    <None Include="ReferencedAssemblies\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+    <None Include="ReferencedAssemblies\Microsoft.Practices.EnterpriseLibrary.Data.xml" />
+    <None Include="ReferencedAssemblies\Microsoft.Practices.EnterpriseLibrary.Logging.Database.dll" />
+    <None Include="ReferencedAssemblies\Microsoft.Practices.EnterpriseLibrary.Logging.Database.xml" />
+    <None Include="ReferencedAssemblies\Microsoft.Practices.EnterpriseLibrary.Logging.dll" />
+    <None Include="ReferencedAssemblies\Microsoft.Practices.EnterpriseLibrary.Logging.xml" />
+    <None Include="ReferencedAssemblies\Microsoft.Practices.ObjectBuilder.dll" />
+    <None Include="ReferencedAssemblies\Microsoft.Practices.ObjectBuilder.xml" />
+    <None Include="ReferencedAssemblies\Microsoft.Practices.ObjectBuilder2.dll" />
+    <None Include="ReferencedAssemblies\Microsoft.Practices.Unity.dll" />
+    <None Include="ReferencedAssemblies\Siberix.ReportWriter.dll" />
+    <None Include="ReferencedAssemblies\Telerik.Web.Design.dll" />
+    <None Include="ReferencedAssemblies\Telerik.Web.UI.dll" />
+    <None Include="ReferencedAssemblies\Validators.dll" />
+    <Content Include="ReportSelection\ViewStaffProfileReport.aspx" />
+    <Content Include="ResetNewPassword.aspx" />
+    <Content Include="ResetPassword.aspx" />
+    <Content Include="StaffAdmin\MDSActivation.aspx" />
+    <Content Include="Student\DragDropTest.aspx" />
+    <Content Include="Student\RosterCriteria.aspx" />
+    <Content Include="Student\RosterImportedData.aspx" />
+    <Content Include="ExIm\ExportFormat.xls" />
+    <Content Include="Web.config" />
+    <None Include="MDSHelp\BDI-2.log" />
+    <None Include="MDSHelp\RoboHHRE.lng" />
+    <None Include="RadControls\Grid\Skins\RadGrid_Default.psd" />
+    <Content Include="Welcome\BDI-2NU_FAQ_DOC HRES.pdf" />
+    <Content Include="Welcome\BDI2_NU_Domain AE_R4_080116.pdf" />
+    <Content Include="Welcome\Comparison_BDI2_NU_BDI2_Standardization_07262016.pdf" />
+    <Content Include="Welcome\BDI2_Examiner_Manual.pdf" />
+    <Content Include="Welcome\BDI2_NU_Examiner_Manual.pdf" />
+    <Content Include="Welcome\BDI-2NU_SCRN_StimBook.pdf" />
+    <Content Include="Welcome\BDI-2NU_StimBook.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BDI2Core\BDI2Core.csproj">
+      <Project>{19CD31DF-5476-41E1-BD60-2F1FF4AF796A}</Project>
+      <Name>BDI2Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Admin\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>3285</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/BDI2Web</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

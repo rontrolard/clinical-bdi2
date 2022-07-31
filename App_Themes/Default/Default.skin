@@ -1,0 +1,54 @@
+<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="radT" %>
+<asp:TextBox runat="server" CssClass="defaulTextBoxStyle"></asp:TextBox>
+<asp:TextBox runat="server" SkinID="RightAligned" CssClass="rightAlignedTextBox"></asp:TextBox>
+<asp:Button runat="server" CssClass="Button"></asp:Button>
+<asp:RadioButtonList runat="server" Font-Bold="False" Font-Names="Verdana" Font-Size="10px"></asp:RadioButtonList>
+<asp:DropDownList runat="server" BackColor="White" BorderColor="Black" BorderStyle="Solid" BorderWidth="1px" Font-Bold="False" Font-Names="Verdana" Font-Size="10px"></asp:DropDownList>
+<asp:CheckBox runat="server"  Font-Bold="False" CssClass="checkBox" Font-Names="Verdana" Font-Size="10px"></asp:CheckBox>
+<asp:ListBox runat="server" BackColor="White" BorderColor="Black" BorderStyle="Solid" BorderWidth="1px" Font-Bold="False" Font-Names="Verdana" Font-Size="10px"></asp:ListBox>
+<asp:Label runat="server" CssClass="defaultLabelStyle" ></asp:Label>
+<asp:Label runat="server" SkinID="Info" CssClass="Info"></asp:Label>
+<asp:Label runat="server" SkinID="Title" CssClass="title" ></asp:Label>
+<asp:Label runat="server" SkinID="RegularText" CssClass="text"></asp:Label>
+<asp:Label runat="server" SkinID="GridFontColor" CssClass="gridFontColor"></asp:Label>
+<asp:Label runat="server" SkinID="RegularTextNoPadding" CssClass="textNoPadding"></asp:Label>
+<asp:Label runat="server" SkinID="ErrorMessage" CssClass="errorMessage"></asp:Label>
+<asp:GridView runat="server" BackColor="White" BorderColor="#CC9966" BorderStyle="Solid" BorderWidth="1px" CellPadding="4">
+    <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+    <AlternatingRowStyle BackColor="#f3c042" ForeColor="Black" Font-Names="Verdana, Arial, Helvetica, sans-serif" Font-Size="12px" Font-Bold="false"/>
+    <RowStyle BackColor="White" ForeColor="black" Font-Names="Verdana, Arial, Helvetica, sans-serif" Font-Size="12px" Font-Bold="false"/>
+    <SelectedRowStyle BackColor="#FFCC66" Font-Bold="false" ForeColor="#663399" />
+    <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+    <HeaderStyle BackColor="#105fad" Font-Bold="True" ForeColor="#FFFFCC" Font-Names="Verdana, Arial, Helvetica, sans-serif" Font-Size="11px" BorderColor="#CC9966" BorderStyle="solid" BorderWidth="1px" />    
+</asp:GridView>
+<radT:RadGrid runat="server" BackColor="White" BorderColor="#CC9966" BorderStyle="Solid" BorderWidth="1px" CellPadding="4"
+    ImagesPath="~/RadControls/Grid/Skins/Default/">
+    <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+    <ItemStyle BackColor="White" ForeColor="black" Font-Names="Verdana, Arial, Helvetica, sans-serif" Font-Size="12px"/>
+    <AlternatingItemStyle BackColor="#f3c042" ForeColor="Black" Font-Names="Verdana, Arial, Helvetica, sans-serif" Font-Size="12px"  />
+    <PagerStyle BackColor="#e4e4e4" ForeColor="#333" HorizontalAlign="Center" Font-Names="Verdana, Arial, Helvetica, sans-serif" Font-Size="11px" />
+    <HeaderStyle BackColor="#105fad" Font-Bold="True" ForeColor="#FFFFCC" Font-Names="Verdana, Arial, Helvetica, sans-serif" Font-Size="11px" BorderColor="#CC9966" BorderStyle="solid" BorderWidth="1px" />    
+</radT:RadGrid>
+<radT:RadGrid 
+    runat="server"
+    SkinID="Default2"
+    ImagesBaseDir="~/RadControls/Grid/Skins/Default/img/">
+</radT:RadGrid>
+<radT:RadDockZone runat="server" BorderStyle="none" orientation="vertical" style="width:755px;min-height:20px;float:left; background:#fcf0c7;"/>    
+<radT:RadDock DockMode="Docked" DefaultCommands="ExpandCollapse" EnableRoundedCorners="false" EnableDrag="false" BorderStyle="None" AutoPostBack="false" runat="server"/>
+<asp:Hyperlink runat="server" font-Size="11px" Font-Names="Verdana, Arial, Helvetica, sans-serif" Font-Underline="true" ForeColor="#9C3407"></asp:Hyperlink>
